@@ -1,0 +1,6 @@
+proj002_venv/
+db.sqlite3
+*.pyc
+proj002.txt
+__pycache__/
+*.sqlite*

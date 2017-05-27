@@ -1,0 +1,21 @@
+{% extends 'proj002_llogs/base.html' %}
+
+{% block content %}
+
+  <h1>Hello</h1>
+
+<!--
+  {{ form }}
+  {{ request.POST }}
+-->
+
+<form method= 'POST' action= "{% url 'users:hello' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <button name= "submit">register</button>
+  <input type= "hidden" name= "next" value= "{% url 'proj002_llogs:index' %}" />
+</form>
+
+
+{% endblock content %}

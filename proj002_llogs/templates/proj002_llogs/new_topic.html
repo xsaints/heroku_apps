@@ -1,0 +1,14 @@
+{% extends 'proj002_llogs/base.html' %}
+
+{% block content %}
+
+  <p>Add a new topic:</p>
+  
+  <form action= "{% url 'proj002_llogs:new_topic' %}" method= 'POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name='submit'>add topic</button>
+  </form>
+
+{% endblock content %}
+
