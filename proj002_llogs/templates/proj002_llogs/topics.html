@@ -1,19 +1,26 @@
 {% extends 'proj002_llogs/base.html' %}
 
-{% block content %}
-<ul>
-  {% for topic in topics %}
-    <li>
-    <a href= "{% url 'proj002_llogs:topic' topic.id %}">{{ topic }}</a>
-    </li>
-  {% empty %}
-    <li>
-      <p>No topics have been added yet.</p>
-    </li>
-  {% endfor %}
-</ul>
+{% block header %}
+  <h1>Topics</h1>
+{% endblock header %}
 
-<p>
+{% block content %}
+  <ul>
+    {% for topic in topics %}
+      <li>
+      <h3>
+      <a href= "{% url 'proj002_llogs:topic' topic.id %}">{{ topic }}</a>
+      </h3>
+      </li>
+    {% empty %}
+      <li>
+        <p>No topics have been added yet.</p>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h3>
   <a href= "{% url 'proj002_llogs:new_topic' %}">Add a new topic</a>
-</p>
+  </h3>
+
 {% endblock content %}

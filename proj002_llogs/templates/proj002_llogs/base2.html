@@ -1,0 +1,29 @@
+<html>
+<title>
+<p>
+
+</p>
+</title>
+
+<body>
+<a href= "{% url 'proj002_llogs:index' %}" >My World</a> - 
+<a href= "{% url 'proj002_llogs:topics' %}" >Topics</a> -
+
+{% if user.is_authenticated %}
+  Hello, {{ user.username }}.
+  <a href="{% url 'users:logout' %}">log out</a>
+  
+{% else %}
+  <a href= "{% url 'users:hello' %}">register</a> -
+  <a href= "{% url 'users:login' %}">log in</a>
+{% endif %}
+
+
+
+{% block content %}{% endblock content %}
+
+
+{% block footer %}{% endblock %}
+
+</body>
+</html>

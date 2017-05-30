@@ -1,27 +1,39 @@
 {% extends 'proj002_llogs/base.html' %}
+{% load bootstrap3 %}
+
+
+{% block header %}
+  <h2>Log in to your account.</h2>
+
+{% endblock header %}
 
 
 {% block content %}
   
-<xxhtml>  
+  <!--
+  <xxhtml>  
   <h1>login</h1>
   
-</xxhtml>
-  
+  </xxhtml>
   
   {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
   {% endif %}
+  -->
   
-  <form action= "{% url 'users:login' %}" method= 'POST'>
+  <form action= "{% url 'users:login' %}" method= 'POST' class= "form">
     {% csrf_token %}
-    {{ form.as_p }}
+    <!--{{ form.as_p }}  
     <button name= 'submit'>log in</button>
+
+    -->
+    
+    {% bootstrap_form form %}
+    {% buttons %}
+      <button name= "submit" class= "btn btn-primary">log in</button>
+    {% endbuttons %}
     
     <input type= 'hidden' name= 'next' value= "{% url 'proj002_llogs:index' %}" />
   </form>
   
-    
-
-    
 {% endblock content %}

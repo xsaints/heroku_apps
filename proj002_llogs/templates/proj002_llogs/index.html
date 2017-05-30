@@ -1,8 +1,21 @@
 {% extends 'proj002_llogs/base.html' %}
 
+{% block header %}
+  <div class= 'jumbotron'>
+    <h1>Track your life.</h1>
+  </div>
+
+{% endblock header %}
+
 {% block content %}
 
-<p>Main page</p>
+<h2>
+<a href="{% url 'users:hello' %}">Register an account</a> to make
+your own Life Log, and list the topics you're breathing for.
+</h2>
+<h2>
+Whenever you live more, make an entry summarizing what you've lived.
+</h2>
 
 {% endblock content %}
 
